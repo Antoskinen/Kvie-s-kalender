@@ -2,21 +2,21 @@ import streamlit as st
 from docx import Document
 
 def main():
-    st.title("Document Viewer and Downloader")
+    st.title("Informationer omkring ankomst/afgang")
     
     # File path
     file_path = "pages/Kvie Sø ankomst Vinter 2025.docx"
 
     # File download button
     st.download_button(
-        label="Download the Word Document",
+        label="Klik her og download guiden som fil for ae billederne",
         data=open(file_path, "rb").read(),
         file_name="Kvie Sø ankomst Vinter 2025.docx",
         mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
     )
     
     # Display file content (optional, requires the `python-docx` library)
-    st.subheader("Document Content:")
+    st.subheader("Dokumentets tekst:")
     try:
         from docx import Document
         document = Document(file_path)
