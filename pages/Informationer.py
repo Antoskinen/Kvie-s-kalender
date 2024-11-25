@@ -1,24 +1,28 @@
 import streamlit as st
-from docx import Document
 
-# Function to display the content of the Word file
-def display_word_file(file_path):
-    document = Document(file_path)
-    for paragraph in document.paragraphs:
-        st.write(paragraph.text)
-
-# Streamlit app
 def main():
-    st.title("Word File Viewer")
+    st.title("Document Viewer and Downloader")
     
-    # Upload Word file
-    uploaded_file = st.file_uploader("Upload a Word file (.docx)", type=["docx"])
+    # File path
+    file_path = "Kvie Sø ankomst Vinter 2025.docx"
     
-    if uploaded_file is not None:
-        st.success("File uploaded successfully!")
-        display_word_file(uploaded_file)
-    else:
-        st.info("Please upload a .docx file to view its content.")
+    # Display file content (optional, requires the `python-docx` library)
+    st.subheader("Document Content:")
+    try:
+        from docx import Document
+        document = Document(file_path)
+        for paragraph in document.paragraphs:
+            st.write(paragraph.text)
+    except ImportError:
+        st.warning("Install python-docx to display the document content.")
+
+    # File download button
+    st.download_button(
+        label="Download the Word Document",
+        data=open(file_path, "rb").read(),
+        file_name="Kvie Sø ankomst Vinter 2025.docx",
+        mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    )
 
 if __name__ == "__main__":
     main()
