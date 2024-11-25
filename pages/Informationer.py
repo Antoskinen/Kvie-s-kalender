@@ -9,7 +9,7 @@ def main():
 
     # File download button
     st.download_button(
-        label="Klik her og download guiden som fil for ae billederne",
+        label="Klik her og download guiden som fil for at se billederne",
         data=open(file_path, "rb").read(),
         file_name="Kvie Sø ankomst Vinter 2025.docx",
         mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
