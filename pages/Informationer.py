@@ -2,7 +2,7 @@ import streamlit as st
 from docx import Document
 
 def main():
-    st.title("Informationer omkring ankomst/afgang")
+    st.title("Informationer omkring Ankomst/Afgang")
     
     # File path
     file_path = "pages/Kvie Sø ankomst Vinter 2025.docx"
