@@ -143,7 +143,7 @@ if st.sidebar.button("Book Datoer"):
                 # Clear selection
                 st.session_state.start_date = None
                 st.session_state.end_date = None
-                st.experimental_rerun()
+                st.rerun()
     else:
         st.sidebar.error("Udfyld venligst alle felter og vælg et datointerval")
 
@@ -213,7 +213,7 @@ if st.session_state.bookings:
                     if v['range_start'] != booking['range_start'] or v['range_end'] != booking['range_end']
                 }
                 save_bookings()
-                st.experimental_rerun()
+                st.rerun()
 else:
     st.info("Ingen bookinger endnu")
 
