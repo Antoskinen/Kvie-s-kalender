@@ -5,7 +5,7 @@ def main():
     st.title("Document Viewer and Downloader")
     
     # File path
-    file_path = "Kvie Sø ankomst Vinter 2025.docx"
+    file_path = "pages/Kvie Sø ankomst Vinter 2025.docx"
     
     # Display file content (optional, requires the `python-docx` library)
     st.subheader("Document Content:")
