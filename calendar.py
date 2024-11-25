@@ -6,15 +6,6 @@ import json
 import os
 import locale
 
-# Set Danish locale
-try:
-    locale.setlocale(locale.LC_ALL, 'da_DK.UTF-8')
-except:
-    try:
-        locale.setlocale(locale.LC_ALL, 'da_DK')
-    except:
-        st.warning("Dansk sprog kunne ikke indstilles fuldt ud. Nogle tekster vil måske vises på engelsk.")
-
 # Danish month and day names
 MONTHS_DA = {
     1: "Januar", 2: "Februar", 3: "Marts", 4: "April",
