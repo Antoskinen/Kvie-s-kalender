@@ -1,4 +1,5 @@
 import streamlit as st
+from docx import Document
 
 def main():
     st.title("Document Viewer and Downloader")
